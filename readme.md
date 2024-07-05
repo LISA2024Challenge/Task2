@@ -1,4 +1,4 @@
-# LISA 2024 Task 2 using nnU-Net!
+# LISA 2024 Task 2 Tutorial using nnU-Net!
 
 # What is nnU-Net?
 Image datasets are enormously diverse: image dimensionality (2D, 3D), modalities/input channels (RGB image, CT, MRI, microscopy, ...), 
