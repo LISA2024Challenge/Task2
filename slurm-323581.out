@@ -1,0 +1,177 @@
+Start------------
+Fri Jul  5 16:53:08 EDT 2024
+-----------------
+Fingerprint extraction...
+Dataset999_LISA
+Using <class 'nnunetv2.imageio.simpleitk_reader_writer.SimpleITKIO'> as reader/writer
+
+####################
+verify_dataset_integrity Done. 
+If you didn't see any error messages then your dataset is most likely OK!
+####################
+
+Using <class 'nnunetv2.imageio.simpleitk_reader_writer.SimpleITKIO'> as reader/writer
+Experiment planning...
+
+############################
+INFO: You are using the old nnU-Net default planner. We have updated our recommendations. Please consider using those instead! Read more here: https://github.com/MIC-DKFZ/nnUNet/blob/master/documentation/resenc_presets.md
+############################
+
+Dropping 3d_lowres config because the image size difference to 3d_fullres is too small. 3d_fullres: [159. 231. 195.], 3d_lowres: [159, 231, 195]
+2D U-Net configuration:
+{'data_identifier': 'nnUNetPlans_2d', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 57, 'patch_size': (256, 224), 'median_image_size_in_voxels': array([231., 195.]), 'spacing': array([1., 1.]), 'normalization_schemes': ['ZScoreNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': (32, 64, 128, 256, 512, 512), 'conv_op': 'torch.nn.modules.conv.Conv2d', 'kernel_sizes': ((3, 3), (3, 3), (3, 3), (3, 3), (3, 3), (3, 3)), 'strides': ((1, 1), (2, 2), (2, 2), (2, 2), (2, 2), (2, 2)), 'n_conv_per_stage': (2, 2, 2, 2, 2, 2), 'n_conv_per_stage_decoder': (2, 2, 2, 2, 2), 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm2d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}}, '_kw_requires_import': ('conv_op', 'norm_op', 'dropout_op', 'nonlin')}, 'batch_dice': True}
+
+Using <class 'nnunetv2.imageio.simpleitk_reader_writer.SimpleITKIO'> as reader/writer
+3D fullres U-Net configuration:
+{'data_identifier': 'nnUNetPlans_3d_fullres', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': (112, 160, 128), 'median_image_size_in_voxels': array([159., 231., 195.]), 'spacing': array([1., 1., 1.]), 'normalization_schemes': ['ZScoreNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': (32, 64, 128, 256, 320, 320), 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': ((3, 3, 3), (3, 3, 3), (3, 3, 3), (3, 3, 3), (3, 3, 3), (3, 3, 3)), 'strides': ((1, 1, 1), (2, 2, 2), (2, 2, 2), (2, 2, 2), (2, 2, 2), (1, 2, 2)), 'n_conv_per_stage': (2, 2, 2, 2, 2, 2), 'n_conv_per_stage_decoder': (2, 2, 2, 2, 2), 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}}, '_kw_requires_import': ('conv_op', 'norm_op', 'dropout_op', 'nonlin')}, 'batch_dice': False}
+
+Plans were saved to preprocessed/Dataset999_LISA/nnUNetPlans.json
+Preprocessing...
+Preprocessing dataset Dataset999_LISA
+Configuration: 3d_fullres...
+Preprocessing the following configuration: 3d_fullres
+{'data_identifier': 'nnUNetPlans_3d_fullres', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': [112, 160, 128], 'median_image_size_in_voxels': [159.0, 231.0, 195.0], 'spacing': [1.0, 1.0, 1.0], 'normalization_schemes': ['ZScoreNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': [32, 64, 128, 256, 320, 320], 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]], 'strides': [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [1, 2, 2]], 'n_conv_per_stage': [2, 2, 2, 2, 2, 2], 'n_conv_per_stage_decoder': [2, 2, 2, 2, 2], 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}}, '_kw_requires_import': ['conv_op', 'norm_op', 'dropout_op', 'nonlin']}, 'batch_dice': False}
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1233
+2 1382
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1674
+2 1598
+old shape: (149, 204, 188), new_shape: [149 204 188], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1054
+2 1030
+old shape: (159, 214, 187), new_shape: [159 214 187], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1070
+2 1126
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1383
+2 1574
+old shape: (189, 233, 197), new_shape: [189 233 197], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1396
+2 1484
+old shape: (159, 189, 176), new_shape: [159 189 176], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1301
+2 1342
+old shape: (159, 223, 191), new_shape: [159 223 191], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1453
+2 1553
+old shape: (176, 218, 175), new_shape: [176 218 175], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 968
+2 780
+old shape: (159, 214, 195), new_shape: [159 214 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1159
+2 1345
+old shape: (180, 225, 197), new_shape: [180 225 197], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 798
+2 1276
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1827
+2 1763
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1365
+2 1384
+old shape: (159, 219, 195), new_shape: [159 219 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1040
+2 1190
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1210
+2 1473
+old shape: (159, 218, 195), new_shape: [159 218 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14e5f727b010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1502
+2 1818
+old shape: (170, 219, 190), new_shape: [170 219 190], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1180
+2 1214
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 610
+2 682
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 948
+2 1002
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 928
+2 991
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 863
+2 1093
+old shape: (159, 216, 195), new_shape: [159 216 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1138
+2 1212
+old shape: (159, 226, 186), new_shape: [159 226 186], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1038
+2 914
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1211
+2 1107
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 845
+2 801
+old shape: (159, 222, 191), new_shape: [159 222 191], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1312
+2 1338
+old shape: (189, 232, 197), new_shape: [189 232 197], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1379
+2 2009
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 965
+2 956
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1245
+2 1058
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1084
+2 1064
+old shape: (175, 219, 176), new_shape: [175 219 176], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1111
+2 1208
+old shape: (189, 221, 181), new_shape: [189 221 181], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x14ca544df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1182
+2 1465
+old shape: (159, 216, 195), new_shape: [159 216 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1452
+2 1955
+old shape: (150, 214, 175), new_shape: [150 214 175], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1913
+2 1692
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1279
+2 1671
+old shape: (159, 219, 194), new_shape: [159 219 194], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1518
+2 1508
+old shape: (189, 224, 176), new_shape: [189 224 176], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1144
+2 1136
+old shape: (164, 215, 185), new_shape: [164 215 185], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1234
+2 1234
+old shape: (159, 225, 195), new_shape: [159 225 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1293
+2 1272
+old shape: (159, 226, 195), new_shape: [159 226 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1118
+2 1016
+old shape: (184, 214, 184), new_shape: [184 214 184], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 990
+2 979
+old shape: (159, 233, 193), new_shape: [159 233 193], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 2071
+2 2319
+old shape: (176, 221, 189), new_shape: [176 221 189], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1097
+2 1455
+old shape: (189, 233, 197), new_shape: [189 233 197], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1038
+2 1114
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1229
+2 1218
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1259
+2 1428
+old shape: (159, 233, 195), new_shape: [159 233 195], old_spacing: [1.0, 1.0, 1.0], new_spacing: [1.0, 1.0, 1.0], fn_data: functools.partial(<function resample_data_or_seg_to_shape at 0x1464bd3df010>, is_seg=False, order=3, order_z=0, force_separate_z=None)
+1 1712
+2 1521
+End--------------
+Fri Jul  5 16:54:14 EDT 2024
+-----------------
