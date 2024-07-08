@@ -1,0 +1,3 @@
+https://www.synapse.org/Synapse:syn61670104
+
+Under Files --> Task2_nnUNet_Weights
